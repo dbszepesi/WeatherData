@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "FtpServerLocation",
-				"fileName": "*",
+				"fileName": "*.*",
 				"folderPath": "/pub/data/ghcn/daily/all"
 			}
 		}
