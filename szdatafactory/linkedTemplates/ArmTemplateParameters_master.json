@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "szdatafactory"
+		},
+		"weatherblob_connectionString": {
+			"value": ""
+		},
+		"NOAA_properties_typeProperties_url": {
+			"value": "https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/all/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
