@@ -53,7 +53,7 @@
 									"referenceName": "NOAAData",
 									"type": "DatasetReference",
 									"parameters": {
-										"PipelineFileList": "@item()"
+										"Filename": "@item()"
 									}
 								}
 							],
