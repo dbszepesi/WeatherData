@@ -80,11 +80,20 @@
 					"referenceName": "NOAA",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"PipelineFileList": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "Binary",
 				"typeProperties": {
 					"location": {
-						"type": "HttpServerLocation"
+						"type": "HttpServerLocation",
+						"relativeUrl": {
+							"value": "@dataset().PipelineFileList",
+							"type": "Expression"
+						}
 					}
 				}
 			},
@@ -186,7 +195,9 @@
 										{
 											"referenceName": "NOAAData",
 											"type": "DatasetReference",
-											"parameters": {}
+											"parameters": {
+												"PipelineFileList": "@item()"
+											}
 										}
 									],
 									"outputs": [
