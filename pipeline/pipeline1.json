@@ -8,6 +8,10 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.PipelineFileList",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "Copy Data1",
