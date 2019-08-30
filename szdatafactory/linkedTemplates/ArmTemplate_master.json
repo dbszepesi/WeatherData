@@ -15,6 +15,10 @@
 			"type": "string",
 			"defaultValue": "https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/all/"
 		},
+		"noaaftp_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "ftp.ncdc.noaa.gov/pub/data"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -47,6 +51,9 @@
 					},
 					"NOAA_properties_typeProperties_url": {
 						"value": "[parameters('NOAA_properties_typeProperties_url')]"
+					},
+					"noaaftp_properties_typeProperties_host": {
+						"value": "[parameters('noaaftp_properties_typeProperties_host')]"
 					}
 				}
 			},

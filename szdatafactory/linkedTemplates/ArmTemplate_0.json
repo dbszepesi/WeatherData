@@ -14,6 +14,10 @@
 		"NOAA_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/all/"
+		},
+		"noaaftp_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "ftp.ncdc.noaa.gov/pub/data"
 		}
 	},
 	"variables": {
@@ -45,6 +49,34 @@
 				"typeProperties": {
 					"connectionString": "[parameters('weatherblob_connectionString')]"
 				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/noaaftp')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [
+					"dszepesi@hotmail.com"
+				],
+				"type": "FtpServer",
+				"typeProperties": {
+					"host": "[parameters('noaaftp_properties_typeProperties_host')]",
+					"port": 21,
+					"enableSsl": false,
+					"enableServerCertificateValidation": false,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": []
 			},
 			"dependsOn": []
 		},
@@ -88,6 +120,29 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/weatherblob')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/NOAAFtpData')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "noaaftp",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "FtpServerLocation",
+						"fileName": "*",
+						"folderPath": "/pub/data/ghcn/daily/all"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/noaaftp')]"
 			]
 		}
 	]

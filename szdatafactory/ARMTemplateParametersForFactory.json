@@ -10,6 +10,9 @@
 		},
 		"NOAA_properties_typeProperties_url": {
 			"value": "https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/all/"
+		},
+		"noaaftp_properties_typeProperties_host": {
+			"value": "ftp.ncdc.noaa.gov/pub/data"
 		}
 	}
 }
