@@ -1,0 +1,16 @@
+{
+	"name": "weatherblob",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "weatherblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation"
+			}
+		}
+	}
+}

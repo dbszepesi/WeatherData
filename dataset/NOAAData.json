@@ -1,0 +1,16 @@
+{
+	"name": "NOAAData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "NOAA",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		}
+	}
+}
