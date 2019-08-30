@@ -1,0 +1,17 @@
+{
+	"name": "noaaftp",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [
+			"dszepesi@hotmail.com"
+		],
+		"type": "FtpServer",
+		"typeProperties": {
+			"host": "ftp.ncdc.noaa.gov/pub/data",
+			"port": 21,
+			"enableSsl": false,
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
