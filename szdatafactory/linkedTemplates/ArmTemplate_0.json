@@ -201,7 +201,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"items": {
-								"value": "@activity('Lookup1').output.firstRow.StationName",
+								"value": "@activity('Lookup1').output.value.column",
 								"type": "Expression"
 							},
 							"activities": [
