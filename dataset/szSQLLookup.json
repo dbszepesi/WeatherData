@@ -1,0 +1,12 @@
+{
+	"name": "szSQLLookup",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "szSQL",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
