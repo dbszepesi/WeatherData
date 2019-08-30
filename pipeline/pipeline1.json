@@ -44,7 +44,10 @@
 							"inputs": [
 								{
 									"referenceName": "NOAAData",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"PipelineFileList": "@item()"
+									}
 								}
 							],
 							"outputs": [
