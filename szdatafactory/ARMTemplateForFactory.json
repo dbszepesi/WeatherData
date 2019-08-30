@@ -117,7 +117,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "FtpServerLocation",
-						"fileName": "ACW00011604.dly",
+						"fileName": "US*.dly",
 						"folderPath": "/pub/data/ghcn/daily/all"
 					}
 				}
