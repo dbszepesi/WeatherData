@@ -85,7 +85,7 @@
 											"referenceName": "NOAAData",
 											"type": "DatasetReference",
 											"parameters": {
-												"PipelineFileList": "@item()"
+												"Filenames": "@item()"
 											}
 										}
 									],
@@ -128,7 +128,7 @@
 					}
 				],
 				"parameters": {
-					"PipelineFileList": {
+					"Filenames": {
 						"type": "array",
 						"defaultValue": [
 							"ACW00011604.dly",
@@ -154,7 +154,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"parameters": {
-					"PipelineFileList": {
+					"Filenames": {
 						"type": "string"
 					}
 				},
@@ -164,7 +164,7 @@
 					"location": {
 						"type": "HttpServerLocation",
 						"relativeUrl": {
-							"value": "@dataset().PipelineFileList",
+							"value": "@dataset().Filenames",
 							"type": "Expression"
 						}
 					}
