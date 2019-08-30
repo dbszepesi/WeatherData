@@ -18,9 +18,8 @@
 					"source": {
 						"type": "BinarySource",
 						"storeSettings": {
-							"type": "FtpReadSettings",
-							"recursive": true,
-							"useBinaryTransfer": true
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
 						}
 					},
 					"sink": {
@@ -33,7 +32,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "NOAAFtpData",
+						"referenceName": "NOAAData",
 						"type": "DatasetReference"
 					}
 				],
@@ -43,8 +42,20 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": []
 			}
 		],
+		"parameters": {
+			"PipelineFileList": {
+				"type": "array",
+				"defaultValue": "\"ACW00011604.dly\",\"ACW00011647.dly\""
+			}
+		},
 		"annotations": []
 	}
 }
