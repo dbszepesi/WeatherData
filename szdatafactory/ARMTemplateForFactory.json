@@ -7,6 +7,10 @@
 			"metadata": "Data Factory Name",
 			"defaultValue": "szdatafactory"
 		},
+		"szSQL_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'szSQL'"
+		},
 		"weatherblob_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'weatherblob'"
@@ -33,13 +37,16 @@
 					{
 						"name": "ForEach1",
 						"type": "ForEach",
-						"dependsOn": [],
+						"dependsOn": [
+							{
+								"activity": "Stored Procedure1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
 						"userProperties": [],
 						"typeProperties": {
-							"items": {
-								"value": "@pipeline().parameters.PipelineFileList",
-								"type": "Expression"
-							},
 							"activities": [
 								{
 									"name": "Copy Data1",
@@ -88,6 +95,32 @@
 								}
 							]
 						}
+					},
+					{
+						"name": "Stored Procedure1",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[GetStations]",
+							"storedProcedureParameters": {
+								"StationType": {
+									"value": "US",
+									"type": "String"
+								}
+							}
+						},
+						"linkedServiceName": {
+							"referenceName": "szSQL",
+							"type": "LinkedServiceReference"
+						}
 					}
 				],
 				"parameters": {
@@ -102,6 +135,7 @@
 				"annotations": []
 			},
 			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/szSQL')]",
 				"[concat(variables('factoryId'), '/datasets/NOAAData')]",
 				"[concat(variables('factoryId'), '/datasets/weatherblob')]"
 			]
@@ -211,6 +245,19 @@
 					"enableSsl": false,
 					"enableServerCertificateValidation": false,
 					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/szSQL')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('szSQL_connectionString')]"
 				}
 			},
 			"dependsOn": []

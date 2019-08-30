@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "szdatafactory"
 		},
+		"szSQL_connectionString": {
+			"value": ""
+		},
 		"weatherblob_connectionString": {
 			"value": ""
 		},

@@ -7,6 +7,10 @@
 			"metadata": "Data Factory Name",
 			"defaultValue": "szdatafactory"
 		},
+		"szSQL_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'szSQL'"
+		},
 		"weatherblob_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'weatherblob'"
@@ -45,6 +49,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"szSQL_connectionString": {
+						"value": "[parameters('szSQL_connectionString')]"
 					},
 					"weatherblob_connectionString": {
 						"value": "[parameters('weatherblob_connectionString')]"
