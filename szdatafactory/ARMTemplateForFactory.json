@@ -85,7 +85,7 @@
 											"referenceName": "NOAAData",
 											"type": "DatasetReference",
 											"parameters": {
-												"Filenames": "@item()"
+												"Filenames": "@item().StationName"
 											}
 										}
 									],
