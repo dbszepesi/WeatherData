@@ -53,7 +53,7 @@
 									"referenceName": "NOAAData",
 									"type": "DatasetReference",
 									"parameters": {
-										"Filename": "@item()"
+										"Filenames": "@item()"
 									}
 								}
 							],
@@ -95,7 +95,7 @@
 			}
 		],
 		"parameters": {
-			"PipelineFileList": {
+			"Filenames": {
 				"type": "array",
 				"defaultValue": [
 					"ACW00011604.dly",
