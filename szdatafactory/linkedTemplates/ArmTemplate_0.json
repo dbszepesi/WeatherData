@@ -182,6 +182,10 @@
 						],
 						"userProperties": [],
 						"typeProperties": {
+							"items": {
+								"value": "@activity('Copy Data1').output.Rows",
+								"type": "Expression"
+							},
 							"activities": [
 								{
 									"name": "Copy Data1",
