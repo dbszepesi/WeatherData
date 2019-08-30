@@ -183,7 +183,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"items": {
-								"value": "@activity('Stored Procedure1').output.Rows",
+								"value": "@activity('Stored Procedure1').output",
 								"type": "Expression"
 							},
 							"activities": [
