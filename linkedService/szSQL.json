@@ -1,0 +1,12 @@
+{
+	"name": "szSQL",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=szsql.database.windows.net;initial catalog=szSQL;user id=szAdmin",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlNaREFUQUZBQ1RPUllfYmE2ZDlhMDgtYmY3OC00MDNlLWI5Y2YtM2RmODhjZjI4YzM4Ig0KfQ=="
+		}
+	}
+}
